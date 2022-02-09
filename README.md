@@ -22,6 +22,7 @@ A aplicação está consumindo uma API própria criada especialmente para o proj
 - NextJs
 - ReactJs
 - Axios
+- Sass
 ## Implantação em produção
 - Back end: Heroku
 - Front end web: Vercel
