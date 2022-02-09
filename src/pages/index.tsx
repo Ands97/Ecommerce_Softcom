@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from 'react';
 import Modal from '../components/Modal';
 import { CartContext } from '../contexts/cartContext';
 
+
 type VariablesTypes = {
   openModal: any,
   showModal: boolean,
