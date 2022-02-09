@@ -185,7 +185,7 @@ const Home: NextPage = () => {
           <>
             {productId.map((item: any, index: number) => (
               <Modal>
-                <div className={styles.closeModal} onClick={closeModal}>
+                <div className={styles.closeModal} onClick={closeModal} key={index}>
                   <div className={styles.arrow}><img src={'http://localhost:3000/images/arrow.svg'}/></div>
                   <p className={styles.closeModalMobile}>Voltar</p>
                   <img className={styles.closeIcon} src={'http://localhost:3000/images/close.svg'}  />
