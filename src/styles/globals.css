@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #F3F3F4;
 }
 
 a {
@@ -13,4 +14,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+@media screen and (max-width: 1074px){
+  html, body{
+    background-color: #FFF;
+  }
 }
