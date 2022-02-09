@@ -184,8 +184,8 @@ const Home: NextPage = () => {
         {showModal &&
           <>
             {productId.map((item: any, index: number) => (
-              <Modal>
-                <div className={styles.closeModal} onClick={closeModal} key={index}>
+              <Modal key={index}>
+                <div className={styles.closeModal} onClick={closeModal} >
                   <div className={styles.arrow}><img src={'http://localhost:3000/images/arrow.svg'}/></div>
                   <p className={styles.closeModalMobile}>Voltar</p>
                   <img className={styles.closeIcon} src={'http://localhost:3000/images/close.svg'}  />
@@ -199,7 +199,7 @@ const Home: NextPage = () => {
 
                       <p>{item.product.productDescription &&
                         item.product.productDescription.split('-').map((des: string, i: number) => (
-                          <ul>
+                          <ul key={index}>
                             {i > 0 &&
                               <li>- {des}</li>
                             }
