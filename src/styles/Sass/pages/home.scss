@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     padding-top: 50px;
     background-color: #FFF;
-    img{
+    .img{
         margin-left: 50px;
         cursor: pointer;
     }
@@ -30,6 +30,8 @@
                 color:#333333;
             }
             span{
+                display: flex;
+                align-items: center;
                 color:$active-color;
                 font-size: 12px;
                 line-height: 5px;
@@ -69,7 +71,7 @@
         border-left: 1px solid #ECECEC;
         padding-left: 20px;
         height: 100px;
-        img{
+        .cartImage{
             margin: 0 5px 20px auto;
             width: 20px;
         }
@@ -130,7 +132,7 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
-        img{
+        .searchImage{
             padding-right: 10px;
             cursor: pointer;
         }
@@ -210,7 +212,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        img{
+        div{
+            display: flex;
+        }
+        .socialIcon{
             padding: 5px;
         }
     }
@@ -244,9 +249,9 @@
             cursor: pointer;
         }
         .arrow{
-            img{
-                display: none;
-            }
+            
+            display: none;
+            
         }
     }
 }
@@ -411,7 +416,7 @@
             justify-content: center;
             margin-left: 0;
             padding-left: 0;
-            img{
+            .cartImage{
                 margin: 36px 10px auto 20px;
                 filter: invert(100%);
                 width: 30px;

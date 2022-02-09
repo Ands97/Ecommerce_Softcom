@@ -6,6 +6,11 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import Modal from '../components/Modal';
 import { CartContext } from '../contexts/cartContext';
+import Cart2 from '../../public/images/cart2.svg';
+import Search from '../../public/images/search.svg';
+import Arrow from '../../public/images/arrow.svg';
+import Close from '../../public/images/close.svg';
+import Image from 'next/image';
 
 
 type VariablesTypes = {
@@ -25,7 +30,7 @@ const Home: NextPage = () => {
   const [searchField, setSearchField] = useState('');
   const [searchResult, setSearchResult] = useState([] as any);
   const [showSearch, setShowSearch] = useState(false);
-  const baseURL = 'https://backendecommercenode.herokuapp.com/api'
+  const baseURL = 'https://backendecommercenode.herokuapp.com/api';
 
   const { openModal, showModal, closeModal, subtractOne, addOne, quantity, addCart } = useContext(CartContext) as VariablesTypes
   const getProducts = async () => {
@@ -82,7 +87,11 @@ const Home: NextPage = () => {
                 placeholder='O que você procura?'
                 value={searchField}
                 onChange={(e) => setSearchField(e.target.value)} />
-              <button onClick={(e) => getSearch(searchField, e)}><img src={'http://localhost:3000/images/search.svg'} /></button>
+              <button onClick={(e) => getSearch(searchField, e)}>
+                <div className={styles.searchImage}> 
+                  <Image src={Search} />
+                </div>
+              </button>
             </div>
           </form>
           {showSearch ?
@@ -96,7 +105,7 @@ const Home: NextPage = () => {
                         <span className={styles.productTitle}>{item.productTitle}</span>
                         <div className={styles.secondBlock}>
                           <span className={styles.productPrice}>R${item.productPrice.toFixed(2).replace('.', ',')}</span>
-                          <img src={'http://localhost:3000/images/cart2.svg'} />
+                          <Image src={Cart2} />
                         </div>
                       </div>
                     </div>
@@ -119,7 +128,7 @@ const Home: NextPage = () => {
                               <span className={styles.productTitle}>{item.productTitle}</span>
                               <div className={styles.secondBlock}>
                                 <span className={styles.productPrice}>R${item.productPrice.toFixed(2).replace('.', ',')}</span>
-                                <img src={'http://localhost:3000/images/cart2.svg'} />
+                                <Image src={Cart2} />
                               </div>
                             </div>
                           </div>
@@ -143,7 +152,7 @@ const Home: NextPage = () => {
                               <span className={styles.productTitle}>{item.productTitle}</span>
                               <div className={styles.secondBlock}>
                                 <span className={styles.productPrice}>R${item.productPrice.toFixed(2).replace('.', ',')}</span>
-                                <img src={'http://localhost:3000/images/cart2.svg'} />
+                                <Image src={Cart2} />
                               </div>
                             </div>
                           </div>
@@ -167,7 +176,7 @@ const Home: NextPage = () => {
                               <span className={styles.productTitle}>{item.productTitle}</span>
                               <div className={styles.secondBlock}>
                                 <span className={styles.productPrice}>R${item.productPrice.toFixed(2).replace('.', ',')}</span>
-                                <img src={'http://localhost:3000/images/cart2.svg'} />
+                                <Image src={Cart2} />
                               </div>
                             </div>
                           </div>
@@ -186,9 +195,13 @@ const Home: NextPage = () => {
             {productId.map((item: any, index: number) => (
               <Modal key={index}>
                 <div className={styles.closeModal} onClick={closeModal} >
-                  <div className={styles.arrow}><img src={'http://localhost:3000/images/arrow.svg'}/></div>
+                  <div className={styles.arrow}>
+                    <Image src={Arrow}/>
+                  </div>
                   <p className={styles.closeModalMobile}>Voltar</p>
-                  <img className={styles.closeIcon} src={'http://localhost:3000/images/close.svg'}  />
+                  <div className={styles.closeIcon}>
+                    <Image  src={Close}  />
+                  </div>
                 </div>
                 
                 <div className={styles.modalProduct}>
